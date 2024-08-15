@@ -1,0 +1,315 @@
+
+@import "~bootstrap/scss/bootstrap";
+
+.vertical-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+
+
+  .btn  {
+    background-color: #FFD700;
+    border-radius: 5px;
+  }
+
+  .btn:hover {
+    background-color: #FF0077;
+    border-radius: 5px;
+  }
+
+  .album-container {
+  display: flex;
+  /* flex-direction:  */
+  align-items: flex-start;
+}
+
+.album-details {
+  /* border: 2px solid #000; */
+  padding: 10px;
+  margin: 10px;
+  height: 500x;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+.rating-information{
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 10px;
+}
+
+
+
+.tracklist {
+  margin-left: 20px; /* Adjust this value based on your preference */
+  width: 500px;
+  overflow: auto;
+}
+
+body{
+  background-color: #2B2B2B;
+}
+
+header{
+  background-color: #2B2B2B;
+}
+
+.navbar-brand{
+  background-color: #5B5B5B;
+}
+
+#header-background
+{
+  background-color: #5B5B5B;
+}
+
+/*login page*/
+#logo{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 3%;
+  width: 40vw;
+  height: 6vw;
+}
+.mt-4{
+  display: flex;
+  flex-direction: column;
+  margin-top: 3%;
+}
+.mt-5{
+  text-align: center;
+  color: white;
+  padding-top: 3%;
+  margin-bottom: 5%
+}
+#login-btn{
+  background-color:#FF0077;
+  color: white;
+}
+.login-button{
+  align-self: center;
+  width: 15vw;
+  margin-bottom: 10vw;
+
+}
+.mt-3{
+  text-align: center;
+  color: white;
+}
+
+/* release page */
+.tracklist{
+  border-radius: 5px;
+  background-color: #5A5A5A;
+  width: 50%;
+  border: 1px solid #2B2B2B;
+  margin-top: 2%;
+  border-collapse: separate;
+  border-spacing: 0px;
+  border-width: 0px;
+
+
+  /* padding-left: 2%; */
+}
+
+/* .table{
+  border-collapse: collapse;
+  border-spacing: 0;
+} */
+
+th{
+  color: white;
+}
+tr{
+  color:white;
+
+
+}
+.album-details{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-right: auto;
+}
+
+.album-image{
+  width: 40%;
+  height: auto;
+  flex-direction: column;
+
+}
+
+
+
+#album-name{
+  color: white;
+}
+#artist-name{
+  color:#d8d8d8;
+  margin-top: 1vw;
+}
+#num
+{
+  width: 5vw;
+  border-color:#2B2B2B;
+}
+#release-rate-buttons{
+ align-items: center;
+}
+#song-name{
+  border-color:#2B2B2B;
+  padding-left: 6%;
+}
+
+
+/* homepage */
+#albumCarousel{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel-inner{
+  /* display: flex;
+  align-items: center; */
+  width: 40vw;
+  height: 40vw;
+}
+
+#homepage-title{
+  text-align: center;
+  color:#FF0077;
+  font-style: italic;
+  font-size: medium;
+  padding-top: 1%;
+  padding-bottom: 1%;
+}
+
+#highlight{
+  background-color:#ff0077b3;
+  border-radius: 10px;
+  font-size: 10;
+
+}
+
+
+/* register page */
+#register-button{
+  background-color:#FF0077;
+  width: 15vw;
+  margin-bottom: 10vw;
+
+  align-self: center;
+}
+
+/*Typography: */
+.review-text{
+  color: #FF0077;
+  font-size: 25px;
+}
+
+.review-subtext{
+  color:#d8d8d8;
+
+}
+
+.review-header {
+  color: #FF0077;
+  font-size: 25px;
+  text-align: center;
+}
+
+
+/*Star icon:*/
+.star-container{
+  position: relative;
+  display: inline-block;
+}
+
+.star-image{
+  width: 80px;
+}
+
+.star-number{
+  position: absolute;
+  top: 50%; /* Adjust the top position */
+  left: 50%; /* Adjust the left position */
+  transform: translate(-50%, -50%);
+  font-size: 15px; /* Adjust the font size of the number */
+  font-weight: bold;
+  color: #000;
+}
+
+/* Reviews: */
+.comment-card {
+
+    position: bottom right;
+    margin-top: 20px; /* Adjust the margin as needed */
+    padding: 15px;
+    background-color: rgb(255, 142, 142); /* Adjust the background color as needed */
+    border: 1px solid #000000; /* Adjust the border color as needed */
+    border-radius: 50px; /* Adjust the border radius as needed */
+  }
+
+.comment-p {
+  margin-bottom: 10px; /* Adjust the margin as needed */
+}
+
+.revInput {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.review-button{
+   padding: 10px;
+      background-color: #FF0077;
+      color: black;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+}
+
+.error-message {
+     background-color: #ffe4e4; /* Light red background color */
+    border: 1px solid #ff0000; /* Red border for additional emphasis */
+    color: #ff0000; /* Red color for the text */
+    padding: 10px; /* Add padding to make it visually appealing */
+    font-weight: bold;
+    margin-bottom: 10px; /* Add some space between the error message and the textarea */
+
+}
+
+nav {
+    ul {
+        display: flex;
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        li {
+            margin-right: 20px;
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+        a {
+            text-decoration: none;
+            color: white;
+
+            &:hover{
+                color: #FF0077;
+                text-decoration: underline; // Optional: Add underline on hover
+            }
+
+        }
+
+
+
+    }
+}
