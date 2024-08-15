@@ -4,12 +4,19 @@ import './index.css';
 import './scss/App.scss'
 import * as bootstrap from 'bootstrap';
 import App from './App';
+import { SpotifyApiProvider } from './Provider/SpotifyApiProvider';
 import reportWebVitals from './reportWebVitals';
+import { BrowserRouter } from 'react-router-dom';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
+
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+      <SpotifyApiProvider>
+        <App />
+      </SpotifyApiProvider>
+    </BrowserRouter>
   </React.StrictMode>
 );
 
