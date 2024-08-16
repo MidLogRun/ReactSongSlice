@@ -261,6 +261,23 @@ app.post('/playlist_data', async (req, res) =>
     // res.status(200).send({ user_id: user_id, data: data.body });
 });
 
+app.get('/playlist/:id', async (req, res) =>
+{
+    const playlist_id = req.params.id;
+
+    try
+    {
+        const data = await spotifyApi.getPlaylist(playlist_id);
+        console.log("data.body:", data.body);
+
+        return res.status(200).send({ playlist: data.body });
+    } catch (error)
+    {
+        console.log(`error with pulling playlist with ${playlist_id}:`, error);
+        return res.status(400).send({ error: error });
+    }
+});
+
 app.listen(3000, () =>
 {
     console.log('Server is listening on port 3000');

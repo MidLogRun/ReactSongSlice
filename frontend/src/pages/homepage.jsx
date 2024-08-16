@@ -27,7 +27,7 @@ const HomePage = ({ token, id }) =>
             );
 
             console.log("playlists:", response.data.data.items);
-            setPlaylists(response.data.items);
+            setPlaylists(response.data.data.items);
 
 
         } catch (error)
@@ -43,7 +43,7 @@ const HomePage = ({ token, id }) =>
 
     return (
         <div>
-            {/* <Carousel playlists={playlists} /> */}
+            <Carousel playlists={playlists} />
             <div className='container'>
                 <button onClick={fetchAlbums} className='btn'> hello I am a button.</button>
             </div>

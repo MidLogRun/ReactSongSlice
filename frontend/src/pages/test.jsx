@@ -5,7 +5,9 @@ const Test = () =>
 {
     return (
         <div>
-            test default page!
+            <p>
+                test default page!
+            </p>
         </div>
     )
 }

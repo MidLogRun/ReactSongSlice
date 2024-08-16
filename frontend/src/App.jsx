@@ -6,7 +6,7 @@ import HomePage from './pages/homepage';
 import Test from './pages/test';
 import SpotifyWebApi from 'spotify-web-api-js';
 import { useSpotifyApi } from './Provider/SpotifyApiProvider';
-
+import PlaylistPage from './pages/playlist';
 const spotifyApi = new SpotifyWebApi();
 
 const getTokenFromUrl = () =>
@@ -135,6 +135,7 @@ function App()
         <Route path='/' element={<Test />} /> {/* Set a default route */}
         <Route path='/login' element={<LoginPage />} />
         <Route path='/homepage' element={<HomePage token={spotifyToken} id={userId} />} />
+        <Route path='/playlist/:id' element={<PlaylistPage />} />
         {/* Add any additional routes as needed */}
       </Routes>
     </>
