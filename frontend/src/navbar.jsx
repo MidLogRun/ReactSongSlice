@@ -11,6 +11,9 @@ const NavBar = () =>
         { to: '/homepage', label: 'Home' },
         { to: '/login', label: 'Login' },
         { to: '/register', label: 'Register' },
+        { to: '/library', label: 'Library' },
+        { to: '/recommendations', label: 'Recommend me something!' },
+
     ];
 
     return (

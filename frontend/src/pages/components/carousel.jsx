@@ -26,9 +26,9 @@ const Carousel = ({ playlists }) =>
                             key={playlist.id}
                             className={`carousel-item ${index === 0 ? 'active' : ''}`}
                         >
-                            <a href={`/release/${playlist.id}`}>
+                            <a href={`/playlist/${playlist.id}`}>
                                 <img
-                                    src={playlist.images[0]}
+                                    src={playlist.images[0].url}
                                     className="d-block w-100"
                                     alt={`${playlist.name} Image`}
                                 />
