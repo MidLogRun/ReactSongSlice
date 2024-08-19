@@ -4,9 +4,11 @@ import { useEffect, useState } from 'react';
 import LoginPage from './pages/login';
 import HomePage from './pages/homepage';
 import Test from './pages/test';
+import LibraryPage from './pages/userlibrary';
 import SpotifyWebApi from 'spotify-web-api-js';
 import { useSpotifyApi } from './Provider/SpotifyApiProvider';
 import PlaylistPage from './pages/playlist';
+import RecommendationPage from './pages/recommendation';
 const spotifyApi = new SpotifyWebApi();
 
 const getTokenFromUrl = () =>
@@ -59,6 +61,7 @@ function App()
   const [spotifyToken, setSpotifyToken] = useState("");
   const [loggedIn, setLoggedIn] = useState(false);
   const [userId, setUserId] = useState(null);
+  const [user, setUser] = useState(null);
   const navigate = useNavigate();
 
   useEffect(() =>
@@ -66,11 +69,6 @@ function App()
     const storedToken = localStorage.getItem('spotifyToken');
     const expiresAt = localStorage.getItem('spotifyTokenExpiresAt');
     const refreshToken = localStorage.getItem('spotifyRefreshToken');
-
-
-
-
-
 
     // Check if the token is expired
     if (storedToken && expiresAt && Date.now() < expiresAt)
@@ -83,7 +81,7 @@ function App()
       spotifyApi.getMe().then((user) =>
       {
         setUserId(user.id);
-        console.log(user.id);
+        setUser(user);
       }).catch(error =>
       {
         console.error("An error occurred getting user details: ", error);
@@ -112,6 +110,7 @@ function App()
         spotifyApi.getMe().then((user) =>
         {
           console.log(user);
+          setUser(user);
           setUserId(user.id);
         });
 
@@ -125,7 +124,7 @@ function App()
 
     // Clear URL hash after processing the token
     window.location.hash = "";
-  }, [navigate]);
+  }, [navigate, spotifyToken]);
 
 
   return (
@@ -133,9 +132,12 @@ function App()
       <NavBar />
       <Routes>
         <Route path='/' element={<Test />} /> {/* Set a default route */}
+        <Route path='/test' element={<Test />} /> {/* Set a default route */}
         <Route path='/login' element={<LoginPage />} />
         <Route path='/homepage' element={<HomePage token={spotifyToken} id={userId} />} />
         <Route path='/playlist/:id' element={<PlaylistPage />} />
+        <Route path='/library' element={<LibraryPage user={user} token={spotifyToken} />} />
+        <Route path='/recommendations' element={<RecommendationPage />} />
         {/* Add any additional routes as needed */}
       </Routes>
     </>

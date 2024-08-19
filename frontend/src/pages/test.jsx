@@ -4,10 +4,8 @@
 const Test = () =>
 {
     return (
-        <div>
-            <p>
-                test default page!
-            </p>
+        <div className="mt-3">
+            <h1>Test default page.</h1>
         </div>
     )
 }

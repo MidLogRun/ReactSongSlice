@@ -1,7 +1,9 @@
 import { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
+import axios from 'axios';
 
 
+axios.defaults.withCredentials = true;
 
 const PlaylistPage = () =>
 {
@@ -17,15 +19,12 @@ const PlaylistPage = () =>
         {
             try
             {
-                const response = await fetch(`http://localhost:3000/playlist/${id}`);
-                if (!response.ok)
-                {
-                    console.log('Failed to fetch playlist information');
-                }
-                const data = await response.json();
+                const response = await axios.get(`http://localhost:3000/playlist/${id}`);
 
-                console.log(data.playlist);
-                setPlaylist(data.playlist);
+                const data = response.data.playlist;
+                console.log("response: ", data);
+                console.log(data);
+                setPlaylist(data);
 
             } catch (error)
             {
