@@ -4,7 +4,7 @@ const Carousel = ({ playlists }) =>
 {
     return (
         <main>
-            <h1 className="text-center" id="homepage-title">Review an album below.</h1>
+            <h1 className="text-center" id="homepage-title">Click on any playlist to view it.</h1>
 
             <div id="albumCarousel" className="carousel slide" data-bs-ride="carousel">
                 {/* Carousel Indicators */}

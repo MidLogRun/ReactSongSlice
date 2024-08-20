@@ -46,6 +46,8 @@
   overflow: auto;
 }
 
+
+
 body{
   background-color: #2B2B2B;
 }
@@ -113,10 +115,47 @@ header{
   /* padding-left: 2%; */
 }
 
-/* .table{
-  border-collapse: collapse;
-  border-spacing: 0;
-} */
+.tracklist-recommendations {
+  border-radius: 8px; /* Slightly different border radius */
+  background-color: #4A4A4A; /* Darker background color for differentiation */
+  width: 100%; /* Full width */
+  max-width: 550px; /* Control max width */
+  border: 2px solid #FF0077; /* More prominent border with a pop color */
+  margin-top: 3%; /* More space on top */
+  margin-left: 25px; /* Adjust margin to make it distinct */
+  padding: 10px; /* Add padding to create space within */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Add shadow for a 3D effect */
+  overflow-y: auto; /* Vertical scrolling if content exceeds height */
+  max-height: 400px; /* Limit height to avoid overly large content */
+}
+
+.tracklist-checkbox{
+  display: flex;
+  margin-right: 20px;
+  margin-left: 10px;
+
+}
+
+.tracklist-checkbox input[type='checkbox'] {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    accent-color: #FF0077; /* Custom checkbox color */
+    border-radius: 4px; /* Optional: round the corners */
+    cursor: pointer;
+}
+
+.tracklist-checkbox input[type='checkbox']:hover {
+    transform: scale(1.1); /* Slightly enlarge on hover */
+    transition: transform 0.2s ease-in-out;
+}
+
+.tracklist-checkbox input[type='checkbox']:checked {
+    background-color: #FF0077;
+    border-color: #FF0077;
+}
+
+
 
 th{
   color: white;
